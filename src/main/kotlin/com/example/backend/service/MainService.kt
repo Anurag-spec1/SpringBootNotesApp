@@ -78,9 +78,11 @@ class MainService(
         return "Note added"
     }
 
-    fun getUserNotes(email: String):List<NoteResponse>{
+
+    fun getUserNotes(email: String):List<NoteResponse> {
         return noterepo.findAllByEmail(email).map {
-            NoteResponse(title =it.title, content = it.content, timestamp = it.timestamp)
+            NoteResponse(title = it.title, content = it.content, timestamp = it.timestamp)
         }
     }
+
 }
